@@ -1,24 +1,26 @@
-﻿#mini Neptun:
-##Funckiónális követelmények:
+﻿#mini-Neptun:
+##Funkcionális követelmények:
 ###Vendégek számára elérhető funkciók:
- * Vendégként csak a főoldalt megtekinthető
+ * Vendégként csak a főoldal tekinthető meg.
 
-###Hallagatók számára elérhető funkciók:
- * Hallagatóknak lehetőségük van a főoldalon bejelentkezni
- * Hallgatóknak lehetőségük van szerkeszteni a profiljukat
- * Hallgatók jelentkezhetnek az oktatók által kiírt kurzura
- * Hallgatók le jelentkezhetnek egy felvett kurzusról
- 
+###Hallgatók számára elérhető funkciók:
+ * Hallgatóknak lehetőségük van a főoldalon bejelentkezni.
+ * Hallgatóknak lehetőségük van szerkeszteni a profiljukat.
+ * Hallgatók jelentkezhetnek az oktatók által kiírt tárgyak valamely kurzusára.
+ * Hallgatók leadhatnak egy már felvett tárgyat.
+ * Két hallgató cserélhet egymással azonos tárgyhoz tartozó kurzust.
+
 ###Oktatók számára elérhető funkciók:
- * Oktatóknak lehetőségük van a főoldalon bejelentkezni
- * Oktatóknak lehetőségük van szerkeszteni a profiljukat
- * Oktatóknak lehetőségük van új kurzusok kiírására
- * Oktatóknak lehetőségük van már létező, általuk létrehozzott kurzusok adatainak szerkesztésére(időpont, férőhelyek száma, helyszín)
- * Oktatóknak lehetőségük van egy kurzusra való jelentkezés lezárására
+ * Oktatóknak lehetőségük van a főoldalon bejelentkezni.
+ * Oktatóknak lehetőségük van szerkeszteni a profiljukat.
+ * Oktatóknak lehetőségük van új tárgyak kiírására.
+ * Oktatóknak lehetőségük van már létező, általuk létrehozott tárgyak adatainak szerkesztésére (kredit, leírás, webcím, stb.).
+ * Oktatóknak lehetőségük van egy tárgyhoz kurzusok felvételére.
+ * Oktatóknak lehetőségük van kurzusok adatainak szerkesztésére (férőhely, helyszín, időpont, megjegyzés, leírás, stb.).
+ * Oktatóknak lehetőségük van egy tárgy kurzusaira való jelentkezés lezárására.		
 			
-			
-##Nem funckiónális követelmények:
+##Nem funkcionális követelmények:
  * Felhasználóbarát, ergonomikus elrendezés és kinézet.
- * Gyors műkődés.
+ * Gyors működés.
  * Jelszavak biztonságos tárolása.
- * Funckiókhoz való hozzáférés elött jogosultság vizsgálat.
+ * Funkciókhoz való hozzáférés elött jogosultság vizsgálat.
