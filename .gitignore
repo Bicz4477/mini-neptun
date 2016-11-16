@@ -24,3 +24,7 @@ lib-cov
 
 # Mac Only
 .DS_Store
+
+# Database
+config/express-admin
+development.sqlite

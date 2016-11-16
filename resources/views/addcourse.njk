@@ -1,0 +1,65 @@
+{% extends 'page' %} {% block content %}
+<h2>Új kurzus</h2>
+
+
+{% if old('errors') %}
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h3 class="panel-title">Hibák</h3>
+    </div>
+    <div class="panel-body">
+        <ul>
+            {% for error in old('errors') %}
+            <li>{{ error.message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+<form class="form-horizontal" method="post">
+
+    {{ csrfField }}
+    <div class="form-group">
+        <label for="name" class="col-lg-2 control-label">Kurzus neve</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Kurzus neve" value="{{old('name')}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="class_schedule" class="col-lg-2 control-label">Órarend</label>
+        <div class="col-lg-10">
+            <textarea class="form-control" rows="3" id="class_schedule" name="class_schedule">{{old('class_schedule')}}</textarea>
+            <span class="help-block">Órarend</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="room" class="col-lg-2 control-label">Terem</label>
+        <div class="col-lg-10">
+            <textarea class="form-control" rows="1" id="room" name="room">{{old('room')}}</textarea>
+            <span class="help-block">Terem</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="teacher_id" class="col-lg-2 control-label">Oktató</label>
+        <div class="col-lg-10">
+            <select class="form-control" id="teacher_id" name="teacher_id">
+        {% for teacher in teachers %}
+        <option value="{{ teacher.full_name }}"
+          {% if teacher.id == old('teacher_id') %}
+          selected
+          {% endif %}
+        >{{ teacher.full_name }}</option>
+        {% endfor %}
+      </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+            <button type="reset" class="btn btn-default">Mégsem</button>
+            <button type="submit" class="btn btn-primary">Létrehozás</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

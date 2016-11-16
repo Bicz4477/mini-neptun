@@ -1,0 +1,37 @@
+{% extends 'page' %}
+
+ {% block content %}
+
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Név</th>
+            <th>Kredit</th>
+            <th>Felelős oktató</th>
+            <th>Megtekint</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for subject in subjects %}
+        <tr>
+            <td>
+                {{ subject.name }}
+            </td>
+            <td>
+                {{ subject.credit}}
+            </td>
+            <td>
+                {{ subject.responsible_lecturer}}
+            </td>
+            <td align="center">
+                <a href="/subject/{{ subject.id }}" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
