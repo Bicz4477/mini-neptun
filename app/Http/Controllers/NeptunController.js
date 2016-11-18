@@ -6,6 +6,7 @@ const Teacher = use('App/Model/Teacher')
 const User = use('App/Model/User')
 const Course = use('App/Model/Course')
 const Student = use('App/Model/Student')
+const Trade = use('App/Model/Trade')
 
 class NeptunController {
     * addsubject(request, response) {
@@ -121,6 +122,7 @@ class NeptunController {
             for (var i = 0; i < student.toJSON().courses.length; i++) {
                 if (student.toJSON().courses[i].subject_id == request.param('id')) {
                     signedUpCourseId = student.toJSON().courses[i].id
+                    break
                 }
             }
         }
@@ -155,6 +157,69 @@ class NeptunController {
         yield response.redirect('/subjects')
     }
 
+    * trade(request, response) {
+        const cid = request.input('id')
+        const student = yield Student.findBy('user_id', request.currentUser.id)
+        yield student.related('courses').load()
+        var securityCheck = false;
+        for (var i = 0; i < student.toJSON().courses.length; i++) {
+            if (cid == student.toJSON().courses[i].id) {
+                securityCheck = true;
+                break
+            }
+        }
+        if (!securityCheck) {
+            yield response.redirect('/')
+        }
+
+        const subject = yield Subject.find(student.toJSON().courses[i].subject_id)
+        yield subject.related('courses').load()
+        console.log(subject.toJSON())
+        //console.log(courses)
+        yield response.sendView('trade', { give: cid, subjects: subject.toJSON() })
+    }
+
+    * saveTrade(request, response) {
+        const cid = request.input('id')
+        const data = request.except('_csrf');
+        const student = yield Student.findBy('user_id', request.currentUser.id)
+        const trade = new Trade()
+        trade.student_id = student.id
+        trade.give_course_id = cid
+        trade.wanted_course_id = data.wanted
+        yield trade.save()
+        yield response.redirect('/')
+    }
+
+    * listTrades(request, response) {
+        //nem saját és van neki
+        const student = yield Student.findBy('user_id', request.currentUser.id)
+        const courses = yield Database.select('course_id').from('mx_course_student').where('student_id', student.toJSON().id)
+        //console.log(courses)
+        var ids = new Array(0)
+        for( var i = 0; i < courses.length; i++) {
+            ids.push(courses[i].course_id)
+        }
+        const trades = yield Database.from('trades').whereIn('wanted_course_id', ids)
+        console.log(trades)
+        //console.log(Object.values(courses))
+        yield response.sendView('trades', {offers: trades, student: student.toJSON()})
+    }
+
+    * deal(request, response) {
+        const id = request.input('id')
+        const trade = yield Trade.find(id)
+        const s1 = yield Student.findBy('user_id', request.currentUser.id)
+        const s2 = yield Student.find(trade.toJSON().student_id) 
+        const wanted = [trade.toJSON().wanted_course_id]
+        const give = [trade.toJSON().give_course_id]
+        yield s2.courses().detach(give)
+        yield s1.courses().detach(wanted)
+        yield s2.courses().attach(wanted)
+        yield s1.courses().attach(give)
+        yield Database.table('trades').where('id', id).delete()
+        yield response.redirect('/')
+    }
 }
 
 module.exports = NeptunController

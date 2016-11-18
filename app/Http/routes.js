@@ -30,6 +30,10 @@ Route.get('/subject/:id/editcourse/:cid', 'NeptunController.editcourse')
 Route.post('/subject/:id/editcourse/:cid', 'NeptunController.modifycourse')
 Route.get('/signup/:cid', 'NeptunController.signup')
 Route.get('/signdown/:cid', 'NeptunController.signdown')
+Route.get('/trade', 'NeptunController.trade')
+Route.post('/trade', 'NeptunController.saveTrade')
+Route.get('/trades', 'NeptunController.listTrades')
+Route.get('/deal', 'NeptunController.deal')
 
 
 

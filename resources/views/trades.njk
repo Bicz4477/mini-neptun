@@ -1,0 +1,28 @@
+{% extends 'page' %} 
+{% block content %}
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Cserélné</th>
+            <th>Erre</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for offer in offers %}
+            {% if offer.student_id != student.id %}
+            <tr>
+                <td>
+                    {{ offer.give_course_id }}
+                </td>
+                <td>
+                    {{ offer.wanted_course_id }}
+                </td>
+                <td>
+                    <a href="/deal?id={{offer.id}}">csere</a>
+                </td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

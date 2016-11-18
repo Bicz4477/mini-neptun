@@ -68,6 +68,13 @@
                 {% endif %}
             </td>
             {% endif %}
+            {% if "student" == currentUser.type %}
+            <td align="center">
+                {% if signedUpCourseId == course.id %}
+                    <a href="/trade?id={{course.id}}">Csere</a>
+                {% endif %}
+            </td>
+            {% endif %}
         </tr>
         {% endfor %}
     </tbody>

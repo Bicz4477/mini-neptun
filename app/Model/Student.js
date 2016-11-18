@@ -12,6 +12,10 @@ class Student extends Lucid {
         return this.belongsToMany('App/Model/Course', 'mx_course_student')
     }
 
+    trade() {
+        return this.hasOne('App/Model/Trade', 'id', 'student_id')
+    }
+
 }
 
 module.exports = Student
