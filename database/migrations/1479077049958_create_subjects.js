@@ -11,8 +11,8 @@ class SubjectsTableSchema extends Schema {
       table.integer('credit').notNullable()
       table.string('description', 254)
       table.string('web', 254)
-      table.integer('responsible_lecturer').notNullable()
-      table.foreign('responsible_lecturer').references('Teacher.id')
+      table.integer('lecturer').notNullable()
+      table.foreign('lecturer').references('teachers.teacher_id')
       table.timestamps()
     })
   }

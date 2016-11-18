@@ -40,15 +40,17 @@
                     {% endif %}
                     {% if currentUser.type == 'teacher' %}
                     <li><a href="/addsubject">Új tantárgy <span class="sr-only">(current)</span></a></li>
+                    <li><a href="/subjects">Tárgyak<span class="sr-only">(current)</span></a></li>
                     {% endif %}
                     {% if currentUser.type == 'student' %}
                     <li><a href="/subjects">Tárgyak<span class="sr-only">(current)</span></a></li>
+                    <li><a href="/subjects">Csere<span class="sr-only">(current)</span></a></li>
                     {% endif %}
-                    <li><a href="#">Link</a></li>
                     {% endif %}
                 </ul>
                 {% if currentUser %}
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/logout">{{ currentUser.full_name }}</a></li>
                     <li><a href="/logout">Kijelentkezés</a></li>
                 </ul>
                 {% endif %}

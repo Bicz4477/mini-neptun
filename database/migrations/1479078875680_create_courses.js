@@ -13,8 +13,9 @@ class CoursesTableSchema extends Schema {
       table.integer('subject_id')
       table.string('room', 254)
       table.string('class_schedule', 254)
-      table.foreign('lecturer').references('Teacher.id')
-      table.foreign('subject_id').references('Subject.id')
+      table.boolean('isClosed')
+      table.foreign('lecturer').references('teachers.teacher_id')
+      table.foreign('subject_id').references('subjects.id')
       table.timestamps()
     })
   }

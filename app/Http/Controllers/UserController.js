@@ -3,13 +3,15 @@
 
 const Validator = use('Validator')
 const User = use('App/Model/User')
+const Teacher = use('App/Model/Teacher')
+const Student = use('App/Model/Student')
 const Hash = use('Hash')
 
 class UserController {
     * register(request, response) {
-        if (request.currentUser.type != 'admin') {
-           // response.redirect('/')
-        }
+        /*if (request.currentUser.type != 'admin') {
+            response.redirect('/')
+        }*/
         yield response.sendView('registration')
     }
 
@@ -42,8 +44,23 @@ class UserController {
         user.password = yield Hash.make(registerData.password)
         user.full_name = registerData.full_name
         user.type = registerData.typeSelect
-        
+
         yield user.save()
+
+        if(registerData.typeSelect == 'teacher') {
+            const teacher = new Teacher()
+            //const teacher = yield Teacher.create({ teacher_id: user.id})
+            teacher.teacher_id = user.id
+            //console.log(user)
+            //console.log(teacher)
+            //yield user.teacher().create({ teacher_id: user.id})
+            yield user.teacher().save(teacher)
+        } else {
+            const student = new Student()
+            student.user_id = user.id
+            yield user.student().save(student)
+        }
+        
 
         response.redirect('/')
     }

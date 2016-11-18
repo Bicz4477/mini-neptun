@@ -8,6 +8,14 @@ class User extends Lucid {
     return this.hasMany('App/Model/Token')
   }
 
+  teacher () {
+    return this.hasOne('App/Model/Teacher', 'id', 'teacher_id')
+  }
+
+  student () {
+    return this.hasOne('App/Model/Student', 'id', 'user_id')
+  }
+
 }
 
 module.exports = User

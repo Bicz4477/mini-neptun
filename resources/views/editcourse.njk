@@ -1,5 +1,5 @@
 {% extends 'page' %} {% block content %}
-<h2>Új kurzus</h2>
+<h2>Kurzus módósítása</h2>
 
 
 {% if old('errors') %}
@@ -23,20 +23,20 @@
     <div class="form-group">
         <label for="max_headcount" class="col-lg-2 control-label">Max létszám</label>
         <div class="col-lg-10">
-            <input type="number" class="form-control" id="max_headcount" name="max_headcount" placeholder="Max létszám" value="{{old('max_headcount')}}">
+            <input type="number" class="form-control" id="max_headcount" name="max_headcount" placeholder="Max létszám" value="{{course.max_headcount}}">
         </div>
     </div>
     <div class="form-group">
         <label for="class_schedule" class="col-lg-2 control-label">Órarend</label>
         <div class="col-lg-10">
-            <textarea class="form-control" rows="3" id="class_schedule" name="class_schedule">{{old('class_schedule')}}</textarea>
+            <textarea class="form-control" rows="3" id="class_schedule" name="class_schedule">{{course.class_schedule}}</textarea>
             <span class="help-block">Órarend</span>
         </div>
     </div>
     <div class="form-group">
         <label for="room" class="col-lg-2 control-label">Terem</label>
         <div class="col-lg-10">
-            <textarea class="form-control" rows="1" id="room" name="room">{{old('room')}}</textarea>
+            <textarea class="form-control" rows="1" id="room" name="room">{{course.room}}</textarea>
             <span class="help-block">Terem</span>
         </div>
     </div>
@@ -46,7 +46,7 @@
         <select class="form-control" id="teacher_id" name="teacher_id">
         {% for teacher in teachers %}
         <option value="{{ teacher.teacher_id }}"
-          {% if teacher.teacher_id == old('teacher_id') %}
+          {% if teacher.teacher_id == course.lecturer %}
           selected
           {% endif %}
         >{{ teacher.user.full_name }}</option>
@@ -57,14 +57,14 @@
     <div class="form-group">
         <div class="checkbox col-lg-10 col-lg-offset-2">
           <label for="isClosed">
-            <input id="isClosed" name="isClosed" type="checkbox" value="{{old('isClosed')}}"> Jelentkezés engedélyezése
+            <input id="isClosed" name="isClosed" type="checkbox" {{ "checked" if course.isClosed != true }}> Jelentkezés engedélyezése
           </label>
         </div>
     </div>
     <div class="form-group">
         <div class="col-lg-10 col-lg-offset-2">
             <button type="reset" class="btn btn-default">Mégsem</button>
-            <button type="submit" class="btn btn-primary">Létrehozás</button>
+            <button type="submit" class="btn btn-primary">Mentés</button>
         </div>
     </div>
 </form>
