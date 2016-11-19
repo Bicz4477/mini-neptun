@@ -1,6 +1,7 @@
 'use strict'
 
 const Database = use('Database')
+const Validator = use('Validator')
 const Subject = use('App/Model/Subject')
 const Teacher = use('App/Model/Teacher')
 const User = use('App/Model/User')
@@ -23,6 +24,20 @@ class NeptunController {
         }
 
         const data = request.except('_csrf');
+        const rules = {
+            name: 'required|unique:subjects',
+            credit: 'required'
+        };
+        const validation = yield Validator.validateAll(data, rules)
+
+        if (validation.fails()) {
+            yield request
+                .withAll()
+                .andWith({ errors: validation.messages() })
+                .flash()
+            response.redirect('back')
+            return
+        }
         const subject = new Subject()
         subject.name = data.name
         subject.credit = data.credit

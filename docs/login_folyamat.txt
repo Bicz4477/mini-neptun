@@ -1,0 +1,9 @@
+#title: login_folyamat
+#direction: right
+[<start> kezd] -> [<state>login oldal]
+[<state>login oldal] -> [<input>adatok megadása]
+[<input>adatok megadása] -> [<state> bejelentkezés]
+[<state> bejelentkezés] -> [<choice> sikeres?] 
+[<choice> sikeres?] igen -> [<state> főoldal]
+[<choice> sikeres?] nem -> [<input>adatok megadása]
+[<state> főoldal] -> [<end> vege]

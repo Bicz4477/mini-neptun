@@ -1,0 +1,13 @@
+#title: kurzus_szerkeszt
+#direction: right
+[<start> kezd] -> [<input>Tárgyak gomb]
+[<input>Tárgyak gomb] -> [<state> tárgy keresés]
+[<state> tárgy keresés] -> [<input>Megtekint gomb]
+[<input>Megtekint gomb] ->  [<state> tárgy megtekint]
+[<state> tárgy megtekint] -> [<input> Kurzus szerkeszt gomb]
+[<input> Kurzus szerkeszt gomb] -> [<input>adatok megadása]
+[<input>adatok megadása] -> [<choice> Adatok helyesek?]
+[<choice> Adatok helyesek?] igen -> [<state> mentés]
+[<choice> Adatok helyesek?] nem -> [<input>adatok megadása]
+[<state> mentés] -> [<state> tárgy megtekint]
+[<state> tárgy megtekint] -> [<end> vege]

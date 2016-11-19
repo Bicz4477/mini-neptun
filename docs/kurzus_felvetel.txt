@@ -1,0 +1,9 @@
+#title: kurzus_felvetel
+#direction: right
+[<start> kezd] -> [<input>Tárgyak gomb]
+[<input>Tárgyak gomb] -> [<state> tárgy keresés]
+[<state> tárgy keresés] -> [<input>Megtekint gomb]
+[<input>Megtekint gomb] ->  [<state> tárgy megtekint]
+[<state> tárgy megtekint] -> [<input> Kurzus felvesz gomb]
+[<input> Kurzus felvesz gomb] -> [<state> tárgyak]
+[<state> tárgyak] ->[<end> vege]

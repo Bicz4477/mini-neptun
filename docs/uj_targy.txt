@@ -1,0 +1,9 @@
+#title: uj_targy
+#direction: right
+[<start> kezd] -> [<input>Új tantárgy gomb]
+[<input>Új tantárgy gomb] -> [<input>adatok megadása]
+[<input>adatok megadása] -> [<choice> Adatok helyesek?]
+[<choice> Adatok helyesek?] igen -> [<state> mentés]
+[<state> mentés] -> [<state> tárgyak]
+[<choice> Adatok helyesek?] nem -> [<input>adatok megadása]
+[<state> tárgyak] -> [<end> vege]

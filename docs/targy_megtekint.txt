@@ -1,0 +1,7 @@
+#title: targy_megtekint
+#direction: right
+[<start> kezd] -> [<input>Tárgyak gomb]
+[<input>Tárgyak gomb] -> [<state> tárgy keresés]
+[<state> tárgy keresés] -> [<input>Megtekint gomb]
+[<input>Megtekint gomb] ->  [<state> tárgy megtekint]
+[<state> tárgy megtekint] -> [<end> vege]

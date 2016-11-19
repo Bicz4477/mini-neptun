@@ -1,0 +1,11 @@
+#title: targy_szerkeszt
+#direction: right
+[<start> kezd] -> [<input>Tárgyak gomb]
+[<input>Tárgyak gomb] -> [<state> tárgy keresés]
+[<state> tárgy keresés] -> [<input>Szerkeszt gomb]
+[<input>Szerkeszt gomb] -> [<input>adatok megadása]
+[<input>adatok megadása] -> [<choice> Adatok helyesek?]
+[<choice> Adatok helyesek?] igen -> [<state> mentés]
+[<state> mentés] -> [<state> tárgyak]
+[<choice> Adatok helyesek?] nem -> [<input>adatok megadása]
+[<state> tárgyak] -> [<end> vege]

@@ -1,0 +1,8 @@
+#title: csere_elfogad
+#direction: right
+[<start> kezd] -> [<input>Csere gomb]
+[<input>Csere gomb] -> [<state> Csere keresés]
+[<state> Csere keresés] -> [<input>Csere ajánlat elfogad gomb]
+[<input>Csere ajánlat elfogad gomb] ->  [<state> mentés]
+[<state> mentés] -> [<state> főoldal]
+[<state> főoldal] -> [<end> vege]

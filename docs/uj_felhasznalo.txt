@@ -1,0 +1,9 @@
+#title: uj_felhasznalo
+#direction: right
+[<start> kezd] -> [<input>Új felhasználó rögzítése gomb]
+[<input>Új felhasználó rögzítése gomb] -> [<input>adatok megadása]
+[<input>adatok megadása] -> [<choice> Adatok helyesek?]
+[<choice> Adatok helyesek?] igen -> [<state> mentés]
+[<state> mentés] -> [<state> főoldal]
+[<choice> Adatok helyesek?] nem -> [<input>adatok megadása]
+[<state> főoldal] -> [<end> vege]

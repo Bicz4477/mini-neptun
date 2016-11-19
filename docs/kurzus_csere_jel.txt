@@ -1,0 +1,11 @@
+#title: kurzus_csere_jel
+#direction: right
+[<start> kezd] -> [<input>Tárgyak gomb]
+[<input>Tárgyak gomb] -> [<state> tárgy keresés]
+[<state> tárgy keresés] -> [<input>Megtekint gomb]
+[<input>Megtekint gomb] ->  [<state> tárgy megtekint]
+[<state> tárgy megtekint] -> [<input> Cserére jelöl gomb]
+[<input> Cserére jelöl gomb] -> [<input> Mire cserélne]
+[<input> Mire cserélne] -> [<state> mentés]
+[<state> mentés] -> [<state> főoldal]
+[<state> főoldal] -> [<end> vege]

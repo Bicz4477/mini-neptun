@@ -37,6 +37,7 @@
                     {% if currentUser %}
                     {% if currentUser.type == 'admin' %}
                     <li><a href="/registration">Új felhasználó rögzítése <span class="sr-only">(current)</span></a></li>
+                    <li><a href="/subjects">Tárgyak<span class="sr-only">(current)</span></a></li>
                     {% endif %}
                     {% if currentUser.type == 'teacher' %}
                     <li><a href="/addsubject">Új tantárgy <span class="sr-only">(current)</span></a></li>
