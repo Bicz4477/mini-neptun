@@ -19,7 +19,7 @@
                 {{ subject.credit}}
             </td>
             <td>
-                {{ subject.responsible_lecturer}}
+                <a href="/profile/show?id={{ subject.teacher_id }}">{{ subject.responsible_lecturer}}</a>
             </td>
             <td align="center">
                 <a href="/subject/{{ subject.id }}" class="btn btn-default btn-sm">

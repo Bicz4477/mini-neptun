@@ -38,7 +38,7 @@
                 {{ course.headcount}}/{{ course.max_headcount}}
             </td>
             <td>
-                {{ course.teacher.user.full_name}}
+                <a href="/profile/show?id={{ course.teacher.teacher_id }}">{{ course.teacher.user.full_name}}</a>
             </td>
             <td>
                 {{ course.class_schedule}}

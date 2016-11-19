@@ -1,0 +1,56 @@
+{% extends 'page' %} {% block content %}
+<h2>{{ user.full_name }}</h2>
+
+{% if old('errors') %}
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h3 class="panel-title">Hibák</h3>
+    </div>
+    <div class="panel-body">
+        <ul>
+            {% for error in old('errors') %}
+            <li>{{ error.message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+<form class="form-horizontal" method="post">
+     {{ csrfField }}
+    <div class="form-group">
+        <label for="web" class="col-lg-2 control-label">Web</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="web" name="web" placeholder="https://example.com" disabled value="{{user.web}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="phone" class="col-lg-2 control-label">Telefon</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefon" disabled value="{{user.phone}}">
+        </div>
+    </div>
+    {% if user.type == 'teacher' %}
+    <div class="form-group">
+        <label for="room" class="col-lg-2 control-label">Szoba</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="room" name="room" placeholder="Szoba" disabled value="{{teacher.room}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="consulting_hours" class="col-lg-2 control-label">Fogadóóra</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="consulting_hours" name="consulting_hours" disabled placeholder="Fogadóóra" value="{{teacher.consulting_hours}}">
+        </div>
+    </div>
+    {% endif %}
+    <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+            {% if user.id == currentUser.id %}
+                <a href="/profile/edit">Szerkeszt</button>
+            {% endif %}
+        </div>
+    </div>
+</form>
+
+{% endblock %}

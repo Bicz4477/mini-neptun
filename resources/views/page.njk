@@ -50,7 +50,7 @@
                 </ul>
                 {% if currentUser %}
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/logout">{{ currentUser.full_name }}</a></li>
+                    <li><a href="/profile/show?id={{ currentUser.id }}">{{ currentUser.full_name }}</a></li>
                     <li><a href="/logout">Kijelentkezés</a></li>
                 </ul>
                 {% endif %}
