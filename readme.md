@@ -39,46 +39,46 @@
 * **Oktató:** Kereshet a kiírt tárgyak között, és megtekintheti azokat. Új tárgyak felvételére, saját tárgyai szerkesztésre, tárgyaihoz kurzusok létrehozásra, szerkesztésére képes.
 * **Admin:** kereshet a kiírt tárgyak között, és megtekintheti azokat. Új felhasználókat vehet fel az alkalmazásba.
 
-![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/usecase.png "Használati eset diagram")
+![alt text](docs/usecase.png "Használati eset diagram")
 
 ###1.4. Folyamatok
 * **Vendég:** 
   * bejelentkezés
-![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/login_folyamat.png "bejelentkezés folymat diagram")
+![alt text](docs/login_folyamat.png "bejelentkezés folymat diagram")
 
 * Miden **bejelentkezett felhasználó** számára elérhető folyamatok:
   * Tárgy megtekint
-![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/targy_megtekint.png "tárgy megtekint folyamat")
+![alt text](docs/targy_megtekint.png "tárgy megtekint folyamat")
 
 * **Admin:** 
   * új felhasználó felvétele
-![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/uj_felhasznalo.png "felhasználó rögzítés folyamat")
+![alt text](docs/uj_felhasznalo.png "felhasználó rögzítés folyamat")
 
 * **Oktató:** 
   * új tárgy felvétele
-![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/uj_targy.png "új tárgy rögzítés folyamat")
+![alt text](docs/uj_targy.png "új tárgy rögzítés folyamat")
 
   * tárgy szerkesztése
-  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/targy_szerkeszt.png "tárgy szerkesztése folyamat")
+  ![alt text](docs/targy_szerkeszt.png "tárgy szerkesztése folyamat")
   
   * új kurzus
-  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/uj_kurzus.png "új kurzus folyamat")
+  ![alt text](docs/uj_kurzus.png "új kurzus folyamat")
   
   * kurzus szerkesztése
-  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/kurzus_szerkeszt.png "kurzus szerkesztése folyamat")
+  ![alt text](docs/kurzus_szerkeszt.png "kurzus szerkesztése folyamat")
   
 * **Hallgató**
   * Kurzus felvétele
-  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/kurzus_felvetel.png "kurzus felvesz folyamat")
+  ![alt text](docs/kurzus_felvetel.png "kurzus felvesz folyamat")
   
   * Kurzus lead
-  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/kurzus_lead.png "kurzus felvesz folyamat")
+  ![alt text](docs/kurzus_lead.png "kurzus felvesz folyamat")
   
   * Cserére jelöl
-  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/kurzus_csere_jel.png "kurzus cserére jelöl folyamat")
+  ![alt text](docs/kurzus_csere_jel.png "kurzus cserére jelöl folyamat")
   
   * Csere elfogad:
-  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/csere_elfogad.png "csere elfogad")
+  ![alt text](docs/csere_elfogad.png "csere elfogad")
 
 ##2. Tervezés
 ###2.1. Oldaltérkép
@@ -138,3 +138,47 @@
 * `GET '/login'`: bejelentkező oldal
 * `POST '/login'`: bejelentkezési adatok küldése
 * `GET '/logout'`: kijelentkezés
+
+###2.3. Osztálydiagram
+![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/osztalydiagram.png "osztalydiagram")
+
+###2.4. Adatbázisterv
+![alt text](docs/adatbazisterv.png "Adatbázisterv")
+
+###2.5. Oldalvázlatok
+
+##Bejelentekés
+![alt text](docs/img/login.jpg "Bejelentekés")
+
+##Felhasználó rögzítése
+![alt text](docs/img/regiszt.jpg "Felhasználó rögzítése")
+
+##Profil szerkesztése/megtekintése
+![alt text](docs/img/profil_szerkeszt.jpg "Profil szerkesztése")
+
+##Főoldal
+![alt text](docs/img/fooldal.jpg "Főoldal")
+
+##Új tárgy rögzítése
+![alt text](docs/img/Új_tárgy.jpg "Új Tárgy")
+
+##Tárgyak listázása
+![alt text](docs/img/targyak.jpg "Tárgyak")
+
+##Tárgy megtekintése
+![alt text](docs/img/targy.jpg "Tárgy")
+
+##Tárgy szerkesztése
+![alt text](docs/img/targy_szerkeszt.jpg "Tárgy szerkesztése")
+
+##Kurzus rögzítése
+![alt text](docs/img/uj_kurzus.jpg "Kurzus rögzítése")
+
+##Kurzus szerkeszt
+![alt text](docs/img/kurzus_szerkeszt.jpg "Kurzus szerkeszt")
+
+##Cserére jelöl
+![alt text](docs/img/cserere_jelol.jpg "Cserére jelöl")
+
+##Csere
+![alt text](docs/img/csere.jpg "Csere")
