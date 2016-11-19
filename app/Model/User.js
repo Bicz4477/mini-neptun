@@ -9,7 +9,7 @@ class User extends Lucid {
   }
 
   teacher () {
-    return this.hasOne('App/Model/Teacher', 'id', 'teacher_id')
+    return this.hasOne('App/Model/Teacher', 'id', 'user_id')
   }
 
   student () {

@@ -14,7 +14,7 @@ class CoursesTableSchema extends Schema {
       table.string('room', 254)
       table.string('class_schedule', 254).notNullable()
       table.boolean('isClosed').notNullable()
-      table.foreign('lecturer').references('teachers.teacher_id')
+      table.foreign('lecturer').references('teachers.user_id')
       table.foreign('subject_id').references('subjects.id')
       table.timestamps()
     })

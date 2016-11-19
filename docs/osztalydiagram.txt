@@ -1,0 +1,16 @@
+#title: osztalydiagram
+#direction: down
+#leading: 1.5
+#spacing: 80
+[User|ID: int;username: string;password: string;full_name: string;type: string;web: string]
+[Teacher| ID: int;user_id: int;room: string; consulting_hours: string]
+[Student| ID: int; user_id: int]
+[Subject| ID: int; name: string; credit: int;description: string; web: string; lecturer: int]
+[Course| ID: int; headcount: int; max_headcount: int;subject_id: int; lecturer: int; room: string;class_schedule: string; isClosed: boolean]
+[Trade| student_id: int; give_course_id: int; wanted_course_id: int]
+
+[User]1<-+1[Teacher]
+[User]1<-+1[Student]
+[Trade]1->1[Student]
+[Course]0..*->1[Subject]
+[Trade]1->1[Course]

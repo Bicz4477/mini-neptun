@@ -9,7 +9,7 @@ class Course extends Lucid {
     }
     
     teacher() {
-        return this.belongsTo('App/Model/Teacher', 'teacher_id', 'lecturer')
+        return this.belongsTo('App/Model/Teacher', 'user_id', 'lecturer')
     }
 
     student() {

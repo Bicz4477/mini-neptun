@@ -19,14 +19,14 @@
                 {{ subject.credit}}
             </td>
             <td>
-                <a href="/profile/show?id={{ subject.teacher_id }}">{{ subject.responsible_lecturer}}</a>
+                <a href="/profile/show?id={{ subject.user_id }}">{{ subject.responsible_lecturer}}</a>
             </td>
             <td align="center">
                 <a href="/subject/{{ subject.id }}" class="btn btn-default btn-sm">
                     <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                 </a>
             </td>
-            {% if subject.teacher_id == currentUser.id %}
+            {% if subject.user_id == currentUser.id %}
             <td align="center">
                 <a href="/subject/{{ subject.id }}/editsubject" class="btn btn-default btn-sm">
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>

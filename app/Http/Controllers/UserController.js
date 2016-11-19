@@ -52,11 +52,11 @@ class UserController {
 
         if (registerData.typeSelect == 'teacher') {
             const teacher = new Teacher()
-            //const teacher = yield Teacher.create({ teacher_id: user.id})
-            teacher.teacher_id = user.id
+            //const teacher = yield Teacher.create({ user_id: user.id})
+            teacher.user_id = user.id
             //console.log(user)
             //console.log(teacher)
-            //yield user.teacher().create({ teacher_id: user.id})
+            //yield user.teacher().create({ user_id: user.id})
             yield user.teacher().save(teacher)
         } else {
             const student = new Student()
@@ -112,7 +112,7 @@ class UserController {
 
     * profileEdit(request, response) {
         const user = yield User.find(request.currentUser.id)
-        const teacher = yield Teacher.findBy('teacher_id', request.currentUser.id)
+        const teacher = yield Teacher.findBy('user_id', request.currentUser.id)
         if (teacher != null ) {
            yield response.sendView('profile', { teacher: teacher.toJSON(), user: user.toJSON() })
         }else{
@@ -122,7 +122,7 @@ class UserController {
 
     * profileShow(request, response) {
         const user = yield User.find(request.input('id'))
-        const teacher = yield Teacher.findBy('teacher_id', request.currentUser.id)
+        const teacher = yield Teacher.findBy('user_id', request.currentUser.id)
         if (teacher != null ) {
            yield response.sendView('showProfile', { teacher: teacher.toJSON(), user: user.toJSON() })
         }else{
@@ -133,7 +133,7 @@ class UserController {
     * saveChanges(request, response) {
         const registerData = request.except('_csrf');
         const user = yield User.find(request.currentUser.id)
-        const teacher = yield Teacher.findBy('teacher_id', request.currentUser.id)
+        const teacher = yield Teacher.findBy('user_id', request.currentUser.id)
         if (registerData.password) {
             const rules = {
                 password: 'required|min:4',

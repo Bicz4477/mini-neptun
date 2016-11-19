@@ -12,7 +12,7 @@ class SubjectsTableSchema extends Schema {
       table.string('description', 254)
       table.string('web', 254)
       table.integer('lecturer').notNullable()
-      table.foreign('lecturer').references('teachers.teacher_id')
+      table.foreign('lecturer').references('teachers.user_id')
       table.timestamps()
     })
   }

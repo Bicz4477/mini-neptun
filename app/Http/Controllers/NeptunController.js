@@ -100,7 +100,7 @@ class NeptunController {
         course.max_headcount = data.max_headcount
         course.class_schedule = data.class_schedule
         course.room = data.room
-        course.lecturer = data.teacher_id
+        course.lecturer = data.user_id
         course.isClosed = data.isClosed == null
         yield course.save()
         yield response.redirect('/subject/' + request.param('id'))
@@ -118,7 +118,7 @@ class NeptunController {
         course.max_headcount = data.max_headcount
         course.class_schedule = data.class_schedule
         course.room = data.room
-        course.lecturer = data.teacher_id
+        course.lecturer = data.user_id
         course.isClosed = data.isClosed == null
         course.subject_id = request.param('id')
         yield course.save()

@@ -6,7 +6,7 @@ const User = use('App/Model/User')
 class Teacher extends Lucid   {
 
     user() {
-        return this.belongsTo('App/Model/User', 'id', 'teacher_id')
+        return this.belongsTo('App/Model/User', 'id', 'user_id')
     }
 
 }
