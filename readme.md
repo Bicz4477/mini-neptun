@@ -39,43 +39,43 @@
 * **Oktató:** Kereshet a kiírt tárgyak között, és megtekintheti azokat. Új tárgyak felvételére, saját tárgyai szerkesztésre, tárgyaihoz kurzusok létrehozásra, szerkesztésére képes.
 * **Admin:** kereshet a kiírt tárgyak között, és megtekintheti azokat. Új felhasználókat vehet fel az alkalmazásba.
 
-![alt text](https://github.com/Bicz4477/mini-neptun/docs/usecase.png "Használati eset diagram")
+![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/usecase.png "Használati eset diagram")
 
 ###1.4 Folyamatok
 * **Vendég:** 
   * bejelentkezés
-![alt text](https://github.com/Bicz4477/mini-neptun/docs/login_folyamat.png "bejelentkezés folymat diagram")
+![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/login_folyamat.png "bejelentkezés folymat diagram")
 
 * Miden **bejelentkezett felhasználó** számára elérhető folyamatok:
   * Tárgy megtekint
-![alt text](https://github.com/Bicz4477/mini-neptun/docs/targy_megtekint.png "tárgy megtekint folyamat")
+![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/targy_megtekint.png "tárgy megtekint folyamat")
 
 * **Admin:** 
   * új felhasználó felvétele
-![alt text](https://github.com/Bicz4477/mini-neptun/docs/uj_felhasznalo.png "felhasználó rögzítés folyamat")
+![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/uj_felhasznalo.png "felhasználó rögzítés folyamat")
 
 * **Oktató:** 
   * új tárgy felvétele
-![alt text](https://github.com/Bicz4477/mini-neptun/docs/uj_targy.png "új tárgy rögzítés folyamat")
+![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/uj_targy.png "új tárgy rögzítés folyamat")
 
   * tárgy szerkesztése
-  ![alt text](https://github.com/Bicz4477/mini-neptun/docs/targy_szerkeszt.png "tárgy szerkesztése folyamat")
+  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/targy_szerkeszt.png "tárgy szerkesztése folyamat")
   
   * új kurzus
-  ![alt text](https://github.com/Bicz4477/mini-neptun/docs/uj_kurzus.png "új kurzus folyamat")
+  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/uj_kurzus.png "új kurzus folyamat")
   
   * kurzus szerkesztése
-  ![alt text](https://github.com/Bicz4477/mini-neptun/docs/kurzus_szerkeszt.png "kurzus szerkesztése folyamat")
+  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/kurzus_szerkeszt.png "kurzus szerkesztése folyamat")
   
 * **Hallgató**
   * Kurzus felvétele
-  ![alt text](https://github.com/Bicz4477/mini-neptun/docs/kurzus_felvetel.png "kurzus felvesz folyamat")
+  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/kurzus_felvetel.png "kurzus felvesz folyamat")
   
   * Kurzus lead
-  ![alt text](https://github.com/Bicz4477/mini-neptun/docs/kurzus_lead.png "kurzus felvesz folyamat")
+  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/kurzus_lead.png "kurzus felvesz folyamat")
   
   * Cserére jelöl
-  ![alt text](https://github.com/Bicz4477/mini-neptun/docs/kurzus_csere_jel.png "kurzus cserére jelöl folyamat")
+  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/kurzus_csere_jel.png "kurzus cserére jelöl folyamat")
   
   * Csere elfogad:
-  ![alt text](https://github.com/Bicz4477/mini-neptun/docs/csere_elfogad.png "csere elfogad")
+  ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/csere_elfogad.png "csere elfogad")
