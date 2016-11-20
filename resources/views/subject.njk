@@ -59,19 +59,19 @@
                     {% if course.isClosed == true %}
                         Jelentkezés zárolva
                     {% elif course.max_headcount != course.headcount %}
-                        <a href="/signup/{{course.id}}">Jelentkezés</a>
+                        <a href="/signup/{{course.id}}" class="btn btn-primary">Jelentkezés</a>
                     {% else %}
                         Megtelt
                     {% endif %}
                 {% elif signedUpCourseId == course.id %}
-                    <a href="/signdown/{{course.id}}">Lead</a>
+                    <a href="/signdown/{{course.id}}" class="btn btn-primary">Lead</a>
                 {% endif %}
             </td>
             {% endif %}
             {% if "student" == currentUser.type %}
             <td align="center">
                 {% if signedUpCourseId == course.id %}
-                    <a href="/trade?id={{course.id}}">Csere</a>
+                    <a href="/trade?id={{course.id}}" class="btn btn-primary">Csere</a>
                 {% endif %}
             </td>
             {% endif %}

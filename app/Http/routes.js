@@ -19,6 +19,7 @@ const Route = use('Route')
 
 Route.get('/', 'NeptunController.main')
 Route.get('/subjects', 'NeptunController.subjects').middleware('auth')
+Route.post('/subjects', 'NeptunController.filterSubjects').middleware('auth')
 Route.get('/subject/:id', 'NeptunController.subject').middleware('auth')
 Route.get('/addsubject', 'NeptunController.addsubject').middleware('auth')
 Route.post('/addsubject', 'NeptunController.createsubject').middleware('auth')

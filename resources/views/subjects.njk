@@ -1,5 +1,24 @@
 {% extends 'page' %} {% block content %}
-
+<h2>Tárgyak</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">Kereső filter</div>
+    <div class="panel-body">
+        <div class="row">
+            <form class="form-horizontal" method="POST">
+                {{ csrfField }}
+                <div class="form-group">
+                    <label for="name" class="col-lg-2 control-label">Tárgy neve:</label>
+                    <div class="col-lg-4">
+                        <input class="form-control" name="name" type="name" placeholder="Tárgy neve" />
+                    </div>
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <input class="btn btn-primary" type="submit" value="Keres" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <table class="table table-striped table-bordered table-hover">
     <thead>
         <tr>
@@ -43,15 +62,11 @@
         <li class="disabled"><a href="/subjects?p={{ subjects.currentPage-1 }}">&laquo;</a></li>
         {% else %}
         <li><a href="/subjects?p={{ subjects.currentPage-1 }}">&laquo;</a></li>
-        {% endif %}
-        {% for page in range(1, subjects.lastPage + 1) %}
-        {% if page == subjects.currentPage %}
-            <li class="active"><a href="/subjects?p={{ page }}">{{ page }}</a></li>
+        {% endif %} {% for page in range(1, subjects.lastPage + 1) %} {% if page == subjects.currentPage %}
+        <li class="active"><a href="/subjects?p={{ page }}">{{ page }}</a></li>
         {% else %}
-            <li><a href="/subjects?p={{ page }}">{{ page }}</a></li>
-        {% endif %}
-        {% endfor %}
-        {% if subjects.currentPage == subjects.lastPage %}
+        <li><a href="/subjects?p={{ page }}">{{ page }}</a></li>
+        {% endif %} {% endfor %} {% if subjects.currentPage == subjects.lastPage %}
         <li class="disabled"><a href="/subjects?p={{ subjects.currentPage+1 }}">&raquo;</a></li>
         {% else %}
         <li><a href="/subjects?p={{ subjects.currentPage+1 }}">&raquo;</a></li>

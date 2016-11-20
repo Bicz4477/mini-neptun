@@ -131,6 +131,13 @@ class NeptunController {
         yield response.sendView('subjects', { subjects: subjects })
     }
 
+    * filterSubjects(request, response) {
+        const data = request.except('_csrf');
+        const page = Math.max(1, request.input('p'))
+        const subjects = yield Database.from('v_subjects').where('name', 'LIKE', '%'+data.name+'%').paginate(page, 5)
+        yield response.sendView('subjects', { subjects: subjects })
+    }
+
     * subject(request, response) {
         const subject = yield Subject.find(request.param('id'))
         const student = yield Student.findBy('user_id', request.currentUser.id)

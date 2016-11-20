@@ -12,13 +12,13 @@
             {% if offer.student_id != student.id %}
             <tr>
                 <td>
-                    {{ offer.give_course_id }}
+                    {{ offer.give_course_id }}. kurzus
                 </td>
                 <td>
-                    {{ offer.wanted_course_id }}
+                    {{ offer.wanted_course_id }}. kurzus
                 </td>
-                <td>
-                    <a href="/deal?id={{offer.id}}">csere</a>
+                <td align="center">
+                    <a href="/deal?id={{offer.id}}" class="btn btn-primary">csere</a>
                 </td>
             </tr>
             {% endif %}
