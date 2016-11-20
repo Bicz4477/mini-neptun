@@ -1,6 +1,8 @@
 #mini-Neptun:
-##1. Követelményanalízis
-###1.1. Funkcionális követelmények:
+##1. Célkitűzés
+Az alkalmazás célja, hogy a diákok interneten keresztül intézhessék a tárgyfelvételeiket.
+##2. Követelményanalízis
+###2.1. Funkcionális követelmények:
 ####Vendégek számára elérhető funkciók:
  * Vendégként csak a login oldal tekinthető meg.
 
@@ -31,9 +33,9 @@
  * Jelszavak biztonságos tárolása.
  * Funkciókhoz való hozzáférés elött jogosultság vizsgálat.
  
-###1.2. Szakterületi fogalomjegyzék
+###2.2. Szakterületi fogalomjegyzék
 
-###1.3. Használatieset-modell
+###2.3. Használatieset-modell
 * **Vendég:** a bejelentkezési oldalon kívül más nem érhető el számára.
 * **Hallgató:** kereshet a kiírt tárgyak között, és megtekintheti azokat. Egy Oktató által kiírt tárgy egyik kurzusára jelentkezhet, illetve egy már felvett kurzusról jelentkezhet le. Megtekintheti a más hallgatók által cserélni kívánt kurzusokat, ha fel van jelentkezve cserére alkalmas kurzusra, akkor cseréleht is, illetve saját maga is jelölhet meg kurzust cserére.
 * **Oktató:** Kereshet a kiírt tárgyak között, és megtekintheti azokat. Új tárgyak felvételére, saját tárgyai szerkesztésre, tárgyaihoz kurzusok létrehozásra, szerkesztésére képes.
@@ -41,7 +43,7 @@
 
 ![alt text](docs/usecase.png "Használati eset diagram")
 
-###1.4. Folyamatok
+###2.4. Folyamatok
 * **Vendég:** 
   * bejelentkezés
 ![alt text](docs/login_folyamat.png "bejelentkezés folymat diagram")
@@ -80,8 +82,8 @@
   * Csere elfogad:
   ![alt text](docs/csere_elfogad.png "csere elfogad")
 
-##2. Tervezés
-###2.1. Oldaltérkép
+##3. Tervezés
+###3.1. Oldaltérkép
 **Publikus**
 - Bejelentkezés
 
@@ -109,10 +111,11 @@
     * Kurzus cserére jelöl
 - Kurzus csere lehetőségek
       
-###2.2. Végpontok
+###3.2. Végpontok
 
 * `GET '/'`: főoldal
 * `GET '/subjects'`: tárgylista
+* `POST '/subjects'`: tárgylista, filter adatok küldése
 * `GET '/subject/:id'`: tárgy megtekintése
 * `GET '/addsubject'`: új tárgy felvitele, űrlap megjelenítés
 * `POST '/addsubject'`: új tárgy felvitele, adatok küldése
@@ -139,13 +142,13 @@
 * `POST '/login'`: bejelentkezési adatok küldése
 * `GET '/logout'`: kijelentkezés
 
-###2.3. Osztálydiagram
+###3.3. Osztálydiagram
 ![alt text](https://github.com/Bicz4477/mini-neptun/blob/master/docs/osztalydiagram.png "osztalydiagram")
 
-###2.4. Adatbázisterv
+###3.4. Adatbázisterv
 ![alt text](docs/adatbazisterv.png "Adatbázisterv")
 
-###2.5. Oldalvázlatok
+###3.5. Oldalvázlatok
 
 ##Bejelentekés
 ![alt text](docs/img/login.jpg "Bejelentekés")
