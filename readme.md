@@ -185,3 +185,21 @@ Az alkalmazás célja, hogy a diákok interneten keresztül intézhessék a tár
 
 ##Csere
 ![alt text](docs/img/csere.jpg "Csere")
+
+
+##4. Telepítés
+`git clone https://github.com/Bicz4477/mini-neptun.git`
+
+`cd mini-neptun`
+
+`npm install`
+
+`mv .env.example .env`
+
+`node --harmony_proxies ace migration:run`
+
+`node --harmony_proxies ace db:seed`
+
+alkalmazás indítása: `node --harmony_proxies server`
+
+Alapértelmezett Admin felhasználó: felhasználónév: admin jelszó: alma
