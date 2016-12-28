@@ -260,6 +260,17 @@ class NeptunController {
         yield response.redirect('/')
     }
 
+    * ajaxSearch(request, response) {
+        const query = request.input('q')
+        if(!query) {
+            response.ok([])
+            return
+        }
+        
+        var subjects = yield Database.from('subjects').where('name', 'LIKE', '%'+query+'%').limit(5)
+        response.ok(subjects)
+    }
+
     * main(request, response) {
         const isLoggedIn = yield request.auth.check()
         if (!isLoggedIn) {

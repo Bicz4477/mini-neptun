@@ -35,6 +35,9 @@ Route.get('/trade', 'NeptunController.trade').middleware('auth')
 Route.post('/trade', 'NeptunController.saveTrade').middleware('auth')
 Route.get('/trades', 'NeptunController.listTrades').middleware('auth')
 Route.get('/deal', 'NeptunController.deal').middleware('auth')
+Route.group('ajax', function () {
+  Route.get('/search', 'NeptunController.ajaxSearch')
+ }).prefix('/ajax'); 
 
 
 
