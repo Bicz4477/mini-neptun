@@ -1,4 +1,10 @@
-{% extends 'page' %} {% block content %}
+{% extends 'page' %} 
+
+{% block scripts %}
+    <script src="/urlValidation.js"></script>
+{% endblock %}
+
+{% block content %}
 <h2>Profil szerkesztése</h2>
 
 {% if old('errors') %}
@@ -33,7 +39,7 @@
     <div class="form-group">
         <label for="web" class="col-lg-2 control-label">Web</label>
         <div class="col-lg-10">
-            <input type="text" class="form-control" id="web" name="web" placeholder="https://example.com" value="{{user.web}}">
+            <input type="text" class="form-control" id="web" name="web" placeholder="http://example.com" value="{{user.web}}">
         </div>
     </div>
     <div class="form-group">
@@ -59,9 +65,14 @@
     <div class="form-group">
         <div class="col-lg-10 col-lg-offset-2">
             <button type="reset" class="btn btn-default">Mégsem</button>
-            <button type="submit" class="btn btn-primary">Küldés</button>
+            <button id="submit" type="submit" class="btn btn-primary">Küldés</button>
         </div>
     </div>
 </form>
-
+<div class="panel panel-default">
+<div class="panel-heading">Megjegyzés</div>
+    <div class="panel-body">
+        A jelszó mezőket, ha üresen hagyja, akkor a jelszó változatlan marad.
+    </div>
+</div>
 {% endblock %}
