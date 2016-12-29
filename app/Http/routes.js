@@ -36,7 +36,9 @@ Route.post('/trade', 'NeptunController.saveTrade').middleware('auth')
 Route.get('/trades', 'NeptunController.listTrades').middleware('auth')
 Route.get('/deal', 'NeptunController.deal').middleware('auth')
 Route.group('ajax', function () {
-  Route.get('/search', 'NeptunController.ajaxSearch')
+  Route.get('/search', 'NeptunController.ajaxSearch').middleware('auth')
+  Route.post('/signup', 'NeptunController.ajaxSignup').middleware('auth')
+  Route.post('/signdown', 'NeptunController.ajaxSigndown').middleware('auth')
  }).prefix('/ajax'); 
 
 
@@ -48,4 +50,4 @@ Route.post('/profile/edit', 'UserController.saveChanges').middleware('auth')
 Route.post('/registration', 'UserController.doRegister').middleware('auth')
 Route.get('/login', 'UserController.login')
 Route.post('/login', 'UserController.doLogin')
-Route.get('/logout', 'UserController.logout')
+Route.get('/logout', 'UserController.logout').middleware('auth')

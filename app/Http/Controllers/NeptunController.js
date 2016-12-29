@@ -134,7 +134,7 @@ class NeptunController {
     * filterSubjects(request, response) {
         const data = request.except('_csrf');
         const page = Math.max(1, request.input('p'))
-        const subjects = yield Database.from('v_subjects').where('name', 'LIKE', '%'+data.name+'%').paginate(page, 5)
+        const subjects = yield Database.from('v_subjects').where('name', 'LIKE', '%' + data.name + '%').paginate(page, 5)
         yield response.sendView('subjects', { subjects: subjects })
     }
 
@@ -235,11 +235,11 @@ class NeptunController {
         const student = yield Student.findBy('user_id', request.currentUser.id)
         const courses = yield Database.select('course_id').from('mx_course_student').where('student_id', student.toJSON().id)
         var ids = new Array(0)
-        for( var i = 0; i < courses.length; i++) {
+        for (var i = 0; i < courses.length; i++) {
             ids.push(courses[i].course_id)
         }
         const trades = yield Database.from('trades').whereIn('wanted_course_id', ids)
-        yield response.sendView('trades', {offers: trades, student: student.toJSON()})
+        yield response.sendView('trades', { offers: trades, student: student.toJSON() })
     }
 
     * deal(request, response) {
@@ -249,7 +249,7 @@ class NeptunController {
         const id = request.input('id')
         const trade = yield Trade.find(id)
         const s1 = yield Student.findBy('user_id', request.currentUser.id)
-        const s2 = yield Student.find(trade.toJSON().student_id) 
+        const s2 = yield Student.find(trade.toJSON().student_id)
         const wanted = [trade.toJSON().wanted_course_id]
         const give = [trade.toJSON().give_course_id]
         yield s2.courses().detach(give)
@@ -262,13 +262,42 @@ class NeptunController {
 
     * ajaxSearch(request, response) {
         const query = request.input('q')
-        if(!query) {
+        if (!query) {
             response.ok([])
             return
         }
-        
-        var subjects = yield Database.from('subjects').where('name', 'LIKE', '%'+query+'%').limit(5)
+
+        var subjects = yield Database.from('subjects').where('name', 'LIKE', '%' + query + '%').limit(5)
         response.ok(subjects)
+    }
+
+
+    * ajaxSignup(request, response) {
+        if (request.currentUser.type != "student") {
+            response.redirect('/')
+        }
+        const student = yield Student.findBy('user_id', request.currentUser.id)
+        const cid = [request.input('cid')]
+        yield student.courses().attach(cid)
+        const course = yield Course.find(request.input('cid'))
+        course.headcount++
+        yield course.save()
+        response.send({ success: true })
+        return
+    }
+
+    * ajaxSigndown(request, response) {
+        if (request.currentUser.type != "student") {
+            response.redirect('/')
+        }
+        const student = yield Student.findBy('user_id', request.currentUser.id)
+        const cid = [request.input('cid')]
+        yield student.courses().detach(cid)
+        const course = yield Course.find(request.input('cid'))
+        course.headcount--
+        yield course.save()
+        response.send({ success: true })
+        return
     }
 
     * main(request, response) {
