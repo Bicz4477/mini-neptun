@@ -203,3 +203,21 @@ Az alkalmazás célja, hogy a diákok interneten keresztül intézhessék a tár
 alkalmazás indítása: `node --harmony_proxies server`
 
 Alapértelmezett Admin felhasználó: felhasználónév: admin jelszó: alma
+
+##5. Implementáció
+###5.1 Fejlesztő eszközök
+Az alkalmazás [Node.js](https://nodejs.org/)-re épülő [AdonisJs](https://adonisjs.com/) nevű keretrendszer és [Nunjucks](https://mozilla.github.io/nunjucks/) template engine segítségével készült. A fejlesztés [Visual Studio Code](https://code.visualstudio.com/), [Notepad++](https://notepad-plus-plus.org/), [SQlite Database Browser](http://sqlitebrowser.org/) szoftverekkel történt.
+
+A dokumentáció [nomnoml](http://nomnoml.com/), [SchemaCrawler](http://sualeh.github.io/SchemaCrawler/) felhasználásával készült.
+
+###5.2 Könyvtárstruktúra
+* app
+  * Http
+    * Controllers - MVC Vezérlő
+    * Model - MVC Modell
+* database - adatbázis fájl
+  * seeds - adatbázis seedek
+  * migrations - adatbázis migrációs scriptek
+* public - képek, stíluslapok, scriptek helye
+* resources
+  * views - MVC Nézet
