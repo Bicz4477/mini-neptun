@@ -39,6 +39,7 @@ Route.group('ajax', function () {
   Route.get('/search', 'NeptunController.ajaxSearch').middleware('auth')
   Route.post('/signup', 'NeptunController.ajaxSignup').middleware('auth')
   Route.post('/signdown', 'NeptunController.ajaxSigndown').middleware('auth')
+  Route.post('/deal', 'NeptunController.ajaxDeal').middleware('auth')
  }).prefix('/ajax'); 
 
 

@@ -300,6 +300,30 @@ class NeptunController {
         return
     }
 
+    * ajaxDeal(request, response) {
+        if (request.currentUser.type != "student") {
+            response.redirect('/')
+        }
+        const id = request.input('id')
+        const trade = yield Trade.find(id)
+        if (trade) {
+            const s1 = yield Student.findBy('user_id', request.currentUser.id)
+            const s2 = yield Student.find(trade.toJSON().student_id)
+            const wanted = [trade.toJSON().wanted_course_id]
+            const give = [trade.toJSON().give_course_id]
+            yield s2.courses().detach(give)
+            yield s1.courses().detach(wanted)
+            yield s2.courses().attach(wanted)
+            yield s1.courses().attach(give)
+            yield Database.table('trades').where('id', id).delete()
+            response.send({ success: true })
+            return
+        } else {
+            response.send({ success: false })
+            return
+        }
+    }
+
     * main(request, response) {
         const isLoggedIn = yield request.auth.check()
         if (!isLoggedIn) {
