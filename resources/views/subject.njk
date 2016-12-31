@@ -88,9 +88,12 @@
 Nincs kurzus!!
 {% endif %}
 </div>
-{% if currentUser.type == "teacher" and currentUser.id == teacher.id %}
-    <a href="/subject/{{ param_id }}/addcourse" class="btn btn-default">Új kurzus</a>
-{% endif %}
+<div class="panel-body">
+    <a href="/subjects" class="btn btn-default">Vissza</a>
+    {% if currentUser.type == "teacher" and currentUser.id == teacher.id %}
+        <a href="/subject/{{ param_id }}/addcourse" class="btn btn-primary">Új kurzus</a>
+    {% endif %}
+</div>
 </div>
 <div class="modal fade confirm-modal" tabindex="-1" role="dialog" id="confirmDialog">
     <div class="modal-dialog modal-sm" role="document">

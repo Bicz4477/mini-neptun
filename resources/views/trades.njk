@@ -5,7 +5,16 @@
 {% endblock %}
 {% block content %}
 {{ csrfField }}
-<table id="data" class="table table-striped table-bordered table-hover">
+<div id="data">
+{% if offers.length == 0 %}
+<div class="panel panel-default">
+    <div class="panel-heading">:(</div>
+    <div class="panel-body">
+        Nincs az Ön kurzusainak megfelelő csereajánlat!
+    </div>
+</div>
+{% else %}
+<table class="table table-striped table-bordered table-hover">
     <thead>
         <tr>
             <th>Cserélné</th>
@@ -23,13 +32,15 @@
                     {{ offer.wanted_course_id }}. kurzus
                 </td>
                 <td align="center">
-                    <a id="button" href="/deal?id={{offer.id}}" class="btn btn-primary trade">csere</a>
+                    <a id="button" href="/deal?id={{offer.id}}" class="btn btn-primary trade">Csere</a>
                 </td>
             </tr>
             {% endif %}
         {% endfor %}
     </tbody>
 </table>
+{% endif %}
+</div>
 <div class="modal fade confirm-modal" tabindex="-1" role="dialog" id="confirmDialog">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
@@ -42,6 +53,9 @@
         </div>
         </div>
     </div>
+</div>
+<div>
+    <a href="/" class="btn btn-default">Vissza</a>
 </div>
 <div class="modal fade" id="hiba" role="dialog">
     <div class="modal-dialog">

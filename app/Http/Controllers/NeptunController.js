@@ -86,8 +86,7 @@ class NeptunController {
             response.redirect('/')
         }
         const teachers = yield Teacher.with('user').fetch()
-        console.log(course.isClosed)
-        yield response.sendView('editcourse', { teachers: teachers.toJSON(), course: course.toJSON() })
+        yield response.sendView('editcourse', { teachers: teachers.toJSON(), course: course.toJSON(), subject: subject.toJSON() })
     }
 
     * modifycourse(request, response) {
