@@ -309,7 +309,7 @@ A dokumentáció [nomnoml](http://nomnoml.com/), [SchemaCrawler](http://sualeh.g
   * Kattintsunk a "Mentés" gombra
 
 
-## 9.
+## 9. Új funckciók (3. bead)
 ### 9.1 Megereősítő ablak
 Tárgy leadás megereősítő ablak:
 * Érintet fájlok
@@ -357,4 +357,7 @@ Mikor a "Csere" gombra kattintunk egy modális ablak ugrik fel megerősítést k
 
 ## 10. Szekvencia diagram
 Tárgyfelvétel szekvencia diagramja:
-![Szekvencia diagram](docs/seq_diag.svg "Szekvencia diagram")
+![Szekvencia diagram](docs/seq_diag.jpg "Szekvencia diagram")
+
+## 11. 2.bead pótlásait
+A 2. beadandó pótlásait ez a commit tartalmazza: [link](https://github.com/Bicz4477/mini-neptun/commit/fece0236eefbed9d23b3afc917e24c29b77194f8)
