@@ -356,7 +356,7 @@ NeptunController.js - ajaxDeal(...) függvény
 Mikor a "Csere" gombra kattintunk egy modális ablak ugrik fel megerősítést kérve és közben egy script is lefut, a `ajaxDeal.js`-ben található második függvény, amely beállítja az id nevű globális változóba a csere ajánlat id-t. Miután a modális ablakon is megerősítettük csere szándékunkat `ajaxDeal.js`-ben található első függvény fut le, amely egy POST eljárást küld a szervernek a csere ajánlat id-vel. A szerver megkeresi a cserét, elvégzi a szükséges adatbázis műveleteket( megcseréli a megfelelő kurzusokat, törli a csere ajánlatot), majd ha minden hiba nélkül lefutott, akkor egy JSON objektumot küld vissza, amely egy success mezőt tartalmaz (hiba esetén a mező értéke false). Hiba esetén egy modális ablak jelenik meg, amely közli a felhasználóval a hibát, majd újra tölti a script a csere ajánlatokat tartalmazó táblát. Sikeres csere esetén csak a táblázat újra töltése történik meg.
 
 ## 10. Szekvencia diagram
-Tárgyfelvétel szekvencia diagramja:
+###Tárgyfelvétel szekvencia diagramja:
 ![Szekvencia diagram](docs/seq_diag.jpg "Szekvencia diagram")
 
 ## 11. 2.bead pótlásait
