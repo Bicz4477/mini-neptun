@@ -15,9 +15,12 @@ $(document).on('click', '#confirm', function (e) {
         if (json.success) {
             $('#data').load(window.location.href + ' #data', function () {
 
-            })
+            });
         } else {
             $('#hiba').modal('show');
+            $('#data').load(window.location.href + ' #data', function () {
+
+            });
         }
     })
 })

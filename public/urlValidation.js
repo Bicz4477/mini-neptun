@@ -5,7 +5,7 @@ function isUrlValid(url) {
 $(document).ready(function () {
     $('#submit').click(function (event) {
         let url = $('#web').val();
-        if( !url.startsWith("http://")) {
+        if( !url.startsWith("http://") || !url.startsWith("https://")) {
             url = "http://"+url;
             $('#web').val(url);
         }

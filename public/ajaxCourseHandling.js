@@ -14,6 +14,8 @@ $(document).on('click', '.signup', function (e) {
             $('#data').load(window.location.href + ' #data', function () {
 
             })
+        } else {
+            alert("Hiba történt");
         }
     }
         )
@@ -33,6 +35,8 @@ $(document).on('click', '#down', function (e) {
             $('#data').load(window.location.href + ' #data', function () {
 
             })
+        } else {
+            alert("Hiba történt");
         }
     }
         )
